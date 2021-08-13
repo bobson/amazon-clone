@@ -35,6 +35,8 @@ const Payment = () => {
     getClientSecret();
   }, [basket]);
 
+  console.log("the secret is", clientSecret);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -42,7 +44,7 @@ const Payment = () => {
 
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
-        payment_method: { opacitycard: elements.getElement(CardElement) },
+        payment_method: { card: elements.getElement(CardElement) },
       })
       .then(({ paymentIntent }) => {
         setSucceeded(true);
@@ -54,7 +56,7 @@ const Payment = () => {
   };
 
   const handleChange = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setDisabled(e.empty);
     setError(e.error ? e.error.message : "");
   };
