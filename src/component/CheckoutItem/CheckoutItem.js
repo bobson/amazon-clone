@@ -4,7 +4,7 @@ import { useSpring, animated } from "react-spring";
 
 import "./CheckoutItem.css";
 
-const CheckoutItem = ({ id, title, image, price, rating }) => {
+const CheckoutItem = ({ id, title, image, price, rating, hideButton }) => {
   const [{}, dispatch] = useStateValue();
   const [flip, setFlip] = useState(false);
   const props = useSpring({
@@ -48,7 +48,9 @@ const CheckoutItem = ({ id, title, image, price, rating }) => {
               </span>
             ))}
         </div>
-        <button onClick={removeFromBasket}>Remove from Basket</button>
+        {!hideButton && (
+          <button onClick={removeFromBasket}>Remove from Basket</button>
+        )}
       </div>
     </animated.div>
   );

@@ -36,7 +36,7 @@ export const Product = ({ id, title, image, price, rating }) => {
         </div>
       </div>
 
-      <img scr={image} alt="product" />
+      <img src={image} alt="product" />
 
       <button onClick={addToBasket}>Add to Basket</button>
     </div>

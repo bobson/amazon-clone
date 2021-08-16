@@ -1,5 +1,5 @@
 import gamersImg from "../../assets/images/hero/gamers.jpg";
-import { Product } from "../../component/Product/Product";
+import { Product } from "../Product/Product";
 
 import "./Home.css";
 
@@ -9,11 +9,12 @@ const Home = () => {
       <div className="home__container">
         <img src={gamersImg} alt="hero" className="home__image" />
         <div className="home__row">
+          {/* <img src="https://m.media-amazon.com/images/I/51PAIR77wJL.jpg" /> */}
           <Product
             id="1234567"
             title="The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses"
             price={29.99}
-            image={gamersImg}
+            image="https://m.media-amazon.com/images/I/51PAIR77wJL.jpg"
             rating={4}
           />
           <Product
